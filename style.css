@@ -1,21 +1,171 @@
-:root{
+:root {
     --primary-color: #5EB9F0;
-    --paragraph-color:#60697B;
-    --heading-color:#343F52;
-    --skyblue:#E5F4FD;
-    --white:#FFFFFF;
+    --paragraph-color: #60697B;
+    --heading-color: #343F52;
+    --skyblue: #E5F4FD;
+    --white: #FFFFFF;
+    --light-gray:#F0F8FE;
 }
 
-body{
-    font-family: "Urbanist", sans-serif;
+body {
+    font-family: "Urbanist", sans-serif; /* Define la familia tipográfica para el texto, usando Urbanist como primera opción y sans-serif como respaldo */
 }
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+    /* Asegura que el padding y el borde estén incluidos en el ancho y alto total del elemento */
+    box-sizing: border-box; /* Asegura que el padding y el borde estén incluidos en el ancho y alto total del elemento */
+    margin: 0; /* Elimina el margen predeterminado de todos los elementos */
+    padding: 0; /* Elimina el padding predeterminado de todos los elementos */  
 }
 
+h1{
+    color: var(--heading-color);
+    font-size: 54px;
+    line-height: 62px;
+
+    & span{
+        color: var(--primary-color);
+    }
+}
+
+h2 {
+    color: var(--heading-color);
+    font-size: 42px; /* Define el tamaño de la fuente del texto a 42 píxeles */
+    line-height: 50px; /* Define el espacio vertical entre líneas de texto, estableciendo una altura de 50 píxeles entre cada línea */
+}
+
+h3 {
+    color: var(--heading-color); /* Establece el color del texto del elemento a la variable --heading-color */
+    font-size: 23px; /* Define el tamaño de la fuente del texto a 23 píxeles */
+    line-height: 32px; /* Define el espacio vertical entre líneas de texto, estableciendo una altura de 32 píxeles entre cada línea */
+}
+
+main{
+    max-width: 1180px; /* Define el ancho máximo del elemento main a 1180 píxeles, lo que significa que no podrá crecer más allá de este tamaño aunque haya espacio disponible */
+    margin: 0 auto;
+}
+
+nav{
+    display: flex; /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
+    justify-content: space-between; /* Distribuye los elementos flexibles de manera que haya un espacio igual entre ellos, con el primer elemento al inicio y el último al final */
+    padding: 20px 0; /* Añade un espacio interno al elemento con 20 píxeles de padding superior e inferior y 0 píxeles de padding izquierdo y derecho */
+}
+
+p {
+    color: var(--paragraph-color); /* Establece el color del texto del elemento a la variable --paragraph-color */
+    font-size: 17px; /* Define el tamaño de la fuente del texto a 17 píxeles */
+    line-height: 29px; /* Define el espacio vertical entre líneas de texto, estableciendo una altura de 29 píxeles entre cada línea */
+}
+
+ul{
+    list-style: none; /* Elimina los marcadores o viñetas que aparecen por defecto en las listas, dejándolas sin ningún estilo de marcador */
+    display: flex; /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
+    gap: 30px; /* Establece un espacio entre los elementos flexibles dentro del contenedor flexible */
+
+    & li a{
+        color: var(--heading-color);
+        font-weight: 600; /* Define el grosor o peso de la fuente, donde 600 representa un peso semi-negrita, haciendo que el texto sea más grueso que el normal (400) pero menos que negrita completa (700) */
+        text-decoration: none; /* Elimina el subrayado que se muestra por defecto en los enlaces */
+    }
+}
+
+.btn-primary {
+    background-color: var(--primary-color); /* Establece el color de fondo del botón a la variable --primary-color */
+    border-radius: 25px; /* Redondea las esquinas del botón con un radio de 10 píxeles */
+    box-shadow: 1px 0.1rem .5rem 0px rgb(60 60 60/39%); /* Añade una sombra al botón con un color gris oscuro y una opacidad del 39% */
+    color: var(--white); /* Establece el color del texto del botón a la variable --white */
+    display: block; /* Convierte el botón en un bloque, lo que significa que ocupará todo el ancho disponible */
+    padding: 16px; /* Añade un espacio interno al botón con 8 píxeles de padding superior e inferior y 10 píxeles de padding izquierdo y derecho */
+    width: fit-content; /* Establece el ancho del botón a un ancho que se ajuste al contenido interno */
+    text-decoration: none; /* Elimina el subrayado que se muestra por defecto en los enlaces */
+}
+
+/*   hero-styles */
 .hero{
-    background-color: chartreuse;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 60px 0;
+
+    & h1{
+        max-width: 405px;
+    }
+
+    & p{
+        font-size: 22px;
+        line-height: 34px;
+        margin-bottom: 30px;
+    }
+}
+
+/* service-styles */
+.services{
+    background-color: var(--light-gray); /* Establece el color de fondo del elemento a la variable --light-gray */
+    padding: 50px 0; /* Añade un espacio interno al elemento con 50 píxeles de padding superior e inferior y 0 píxeles de padding izquierdo y derecho */
+    & h2{
+        max-width: 655px; /* Establece el ancho máximo del elemento h2 a 655 píxeles */
+        margin: 0 auto 70px; /* Centra el elemento horizontalmente y establece un margen inferior de 70 píxeles */
+        text-align: center; /* Centra el texto del elemento horizontalmente */
+    }
+}
+
+.services-list {
+    display: grid; /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
+    grid-template-columns: repeat(3, 1fr); /* Crea una cuadrícula con 3 columnas de igual ancho */
+}
+
+
+.service-item {
+    text-align: center; /* Centra el texto del elemento horizontalmente */
+
+    &p {
+        margin-bottom: 15px; /* Establece un margen inferior de 15 píxeles para el elemento p */
+    }
+
+    & a {
+        color: var(--primary-color); /* Establece el color del texto del enlace a la variable --primary-color */
+        text-decoration: none; /* Elimina el subrayado que se muestra por defecto en los enlaces */
+    }
+    & img{
+        min-height: 230px; /* Establece la altura mínima del elemento img a 230 píxeles */
+    }
+    & p{
+        margin: 0 auto 20px; /* Centra el elemento horizontalmente y establece un margen inferior de 20 píxeles */
+        max-width: 316px; /* Establece el ancho máximo del elemento p a 316 píxeles */
+    }
+}
+
+/*   testimonials-styles */
+.testimonials{
+    background-color: var(--light-gray);
+    padding: 70px 0;
+    & h2{
+        max-width: 670px;
+        margin: 0 auto 50px;
+        text-align: center;
+    }
+}
+
+.testimonials-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.testimonial-item{
+    background-color: var(--white);
+    padding: 20px;
+    & p{
+        font-size: 18px;
+    }
+}
+
+.testimonial-author{
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    margin-top: 30px;
+
+    & img{
+        max-width: 70px;
+    }
 }
