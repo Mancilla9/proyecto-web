@@ -5,10 +5,28 @@
     --skyblue: #E5F4FD;
     --white: #FFFFFF;
     --light-gray:#F0F8FE;
+    --gray:#FEFEFE;
 }
 
 body {
     font-family: "Urbanist", sans-serif; /* Define la familia tipográfica para el texto, usando Urbanist como primera opción y sans-serif como respaldo */
+}
+
+
+details{
+    padding: 20px;
+    background-color:var(--white);
+    border-radius: 5px;
+}
+
+footer{
+    background-color: var(--heading-color);
+    padding: 50px 0;
+
+    & h2{
+        color: var(--white);
+
+    }
 }
 
 * {
@@ -21,6 +39,7 @@ body {
 h1{
     color: var(--heading-color);
     font-size: 54px;
+    font-weight: 600;
     line-height: 62px;
 
     & span{
@@ -31,30 +50,43 @@ h1{
 h2 {
     color: var(--heading-color);
     font-size: 42px; /* Define el tamaño de la fuente del texto a 42 píxeles */
+    font-weight: 600;
     line-height: 50px; /* Define el espacio vertical entre líneas de texto, estableciendo una altura de 50 píxeles entre cada línea */
 }
 
 h3 {
     color: var(--heading-color); /* Establece el color del texto del elemento a la variable --heading-color */
     font-size: 23px; /* Define el tamaño de la fuente del texto a 23 píxeles */
+    font-weight: 600;
     line-height: 32px; /* Define el espacio vertical entre líneas de texto, estableciendo una altura de 32 píxeles entre cada línea */
 }
 
 main{
-    max-width: 1180px; /* Define el ancho máximo del elemento main a 1180 píxeles, lo que significa que no podrá crecer más allá de este tamaño aunque haya espacio disponible */
-    margin: 0 auto;
+    /* max-width: 1180px; Define el ancho máximo del elemento main a 1180 píxeles, lo que significa que no podrá crecer más allá de este tamaño aunque haya espacio disponible */
+    /* margin: 0 auto; */
 }
 
 nav{
-    display: flex; /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
-    justify-content: space-between; /* Distribuye los elementos flexibles de manera que haya un espacio igual entre ellos, con el primer elemento al inicio y el último al final */
     padding: 20px 0; /* Añade un espacio interno al elemento con 20 píxeles de padding superior e inferior y 0 píxeles de padding izquierdo y derecho */
 }
 
+.nav-container{
+    display: flex; /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
+    justify-content: space-between; /* Distribuye los elementos flexibles de manera que haya un espacio igual entre ellos, con el primer elemento al inicio y el último al final */
+}
 p {
     color: var(--paragraph-color); /* Establece el color del texto del elemento a la variable --paragraph-color */
     font-size: 17px; /* Define el tamaño de la fuente del texto a 17 píxeles */
     line-height: 29px; /* Define el espacio vertical entre líneas de texto, estableciendo una altura de 29 píxeles entre cada línea */
+}
+
+summary{
+    background-color:var(--white);
+    font-size: 18px;
+    font-weight: 600; /* Define el grosor o peso de la fuente, donde 600 representa un peso semi-negrita, haciendo que el texto sea más grueso que el normal (400) pero menos que negrita completa (700) */
+    &::marker{
+        color: var(--primary-color);
+    }
 }
 
 ul{
@@ -72,14 +104,55 @@ ul{
 .btn-primary {
     background-color: var(--primary-color); /* Establece el color de fondo del botón a la variable --primary-color */
     border-radius: 25px; /* Redondea las esquinas del botón con un radio de 10 píxeles */
-    box-shadow: 1px 0.1rem .5rem 0px rgb(60 60 60/39%); /* Añade una sombra al botón con un color gris oscuro y una opacidad del 39% */
+    box-shadow: 1px 0.1rem 0.5rem 0px rgb(60 60 60/12%); /* Añade una sombra al botón con un color gris oscuro y una opacidad del 39% */
     color: var(--white); /* Establece el color del texto del botón a la variable --white */
     display: block; /* Convierte el botón en un bloque, lo que significa que ocupará todo el ancho disponible */
+    height: fit-content; /* Ajusta la altura del elemento automáticamente al tamaño de su contenido, sin agregar espacio adicional */
     padding: 16px; /* Añade un espacio interno al botón con 8 píxeles de padding superior e inferior y 10 píxeles de padding izquierdo y derecho */
     width: fit-content; /* Establece el ancho del botón a un ancho que se ajuste al contenido interno */
     text-decoration: none; /* Elimina el subrayado que se muestra por defecto en los enlaces */
 }
 
+.container{
+    max-width: 1180px; /* Define el ancho máximo del elemento main a 1180 píxeles, lo que significa que no podrá crecer más allá de este tamaño aunque haya espacio disponible */
+    margin: 0 auto; /* Centra horizontalmente el elemento estableciendo un margen automático igual en los lados izquierdo y derecho, mientras mantiene 0 margen en la parte superior e inferior */
+}
+
+/* faq styles */
+.faqs{
+    background-color: var(--gray);
+    padding: 50px 0 100px;
+
+    & h2, & p{
+        margin-bottom: 20px;
+    }
+}
+
+.faqs-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+}
+
+.faqs-item{
+    cursor: pointer;
+    box-shadow: 1px 0.1rem 0.5rem 0px rgb(60 60 60/12%); /* Añade una sombra al botón con un color gris oscuro y una opacidad del 39% */
+}
+
+.faqs-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    & .btn-primary{
+        justify-self: center;
+    }
+}
 /*   hero-styles */
 .hero{
     display: flex;
@@ -96,6 +169,28 @@ ul{
         line-height: 34px;
         margin-bottom: 30px;
     }
+}
+
+.hero-container{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* projects styles */
+.projects{
+    padding: 50px 0 100px;
+    & h2{
+        margin: 0 auto 50px;
+        max-width: 780px;
+        text-align: center;
+    }
+
+}
+.projects-container{
+    display: grid; /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
+    grid-template-columns: repeat(2, 1fr); /* Crea una cuadrícula con 3 columnas de igual ancho */
+    gap: 20px; /* Establece un espacio de 20 píxeles entre los elementos de la cuadrícula, tanto en filas como en columnas */
 }
 
 /* service-styles */
@@ -135,6 +230,116 @@ ul{
     }
 }
 
+/* strategy-styles */
+.strategy{
+    background-color: var(--gray);
+    padding: 50px 0 100px; /* Añade un espacio interno al elemento con 50 píxeles de padding superior e inferior y 0 píxeles de padding izquierdo y derecho */
+
+    & h2{
+        margin-bottom: 30px;
+    }
+    & p{
+        margin-bottom: 20px;
+    }
+}
+.strategy-container{
+    align-items: center;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.strategy-cards-container{
+    display: flex; /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
+    flex-direction: column; /* Establece la dirección del flujo de los elementos flexibles en columna vertical, uno debajo del otro */
+    gap: 40px;
+}
+
+.strategy-card{
+    align-items: center; /* Centra verticalmente los elementos hijos dentro del contenedor flex */
+    background-color: var(--white);
+    box-shadow: 1px 0.1rem 0.5rem 0px rgb(60 60 60/12%);
+    display: flex;
+    gap: 20px;
+    max-width: 520px;
+    padding: 20px;
+    position: relative; /* Permite posicionar el elemento de forma relativa a su posición normal en el flujo del documento, sin afectar a otros elementos. Es necesario para que funcione el desplazamiento 'left: 50px' del segundo elemento */
+
+    &:nth-child(2){ /* Selecciona el segundo elemento hijo dentro del contenedor padre y le aplica un desplazamiento de 50px hacia la derecha */
+        left: 50px;
+    }
+
+    &:nth-child(3){ /* Selecciona el tercer elemento hijo dentro del contenedor padre y le aplica un desplazamiento de 50px hacia la derecha */
+        left: 20px;
+    }
+
+    & .order{
+        background-color: var(--skyblue);
+        border-radius: 100%;
+        color: var(--primary-color);
+        font-size: 22px;
+        font-weight: 600;
+        padding: 10px 12px;
+        width: fit-content; /* Ajusta el ancho del elemento al contenido, haciendo que el elemento sea tan ancho como su contenido y no más */
+    }
+}
+
+/* Team styles */
+.team{
+    background-color: var(--gray);
+    padding: 50px 0 100px;
+}
+
+.team-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr auto;
+}
+
+.team-item{
+    background-color: var(--white);
+    box-shadow: 1px 0.1rem 0.5rem 0px rgb(60 60 60/12%);
+    padding: 20px;
+
+    & h3{
+        font-size: 20px;
+
+        & + p {
+            color: #AAB0BC;
+            text-transform: uppercase;
+        }
+    }
+    
+}
+
+.team-list{
+    display: grid;
+    gap: 20px;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.team-statistics{
+    display: flex;
+    gap: 100px;
+}
+
+.team-statistics-item{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    & h3{
+        font-size: 41px;
+    }
+    & .image{
+        background-color: var(--skyblue);
+        border-radius: 100%;
+        justify-content: center;
+        width: fit-content; /* Ajusta el ancho del elemento para que se ajuste exactamente al contenido, sin ser más ancho ni más estrecho que el contenido mismo */
+        padding: 16px;
+    }
+}
 /*   testimonials-styles */
 .testimonials{
     background-color: var(--light-gray);
@@ -149,7 +354,7 @@ ul{
 .testimonials-list{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 20px; /* Establece un espacio de 20 píxeles entre los elementos de la cuadrícula, tanto en filas como en columnas */
 }
 .testimonial-item{
     background-color: var(--white);
@@ -161,6 +366,7 @@ ul{
 
 .testimonial-author{
     display: flex;
+    /* Alinea los elementos al inicio (izquierda) del contenedor flex */
     justify-content: flex-start;
     gap: 30px;
     margin-top: 30px;
