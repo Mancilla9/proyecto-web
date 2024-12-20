@@ -4,26 +4,27 @@
     --heading-color: #343F52;
     --skyblue: #E5F4FD;
     --white: #FFFFFF;
-    --light-gray:#F0F8FE;
-    --gray:#FEFEFE;
+    --light-gray: #F0F8FE;
+    --gray: #FEFEFE;
 }
 
 body {
-    font-family: "Urbanist", sans-serif; /* Define la familia tipográfica para el texto, usando Urbanist como primera opción y sans-serif como respaldo */
+    font-family: "Urbanist", sans-serif;
+    /* Define la familia tipográfica para el texto, usando Urbanist como primera opción y sans-serif como respaldo */
 }
 
 
-details{
+details {
     padding: 20px;
-    background-color:var(--white);
+    background-color: var(--white);
     border-radius: 5px;
 }
 
-footer{
+footer {
     background-color: var(--heading-color);
     padding: 50px 0;
 
-    & h2{
+    & h2 {
         color: var(--white);
 
     }
@@ -31,347 +32,524 @@ footer{
 
 * {
     /* Asegura que el padding y el borde estén incluidos en el ancho y alto total del elemento */
-    box-sizing: border-box; /* Asegura que el padding y el borde estén incluidos en el ancho y alto total del elemento */
-    margin: 0; /* Elimina el margen predeterminado de todos los elementos */
-    padding: 0; /* Elimina el padding predeterminado de todos los elementos */  
+    box-sizing: border-box;
+    /* Asegura que el padding y el borde estén incluidos en el ancho y alto total del elemento */
+    margin: 0;
+    /* Elimina el margen predeterminado de todos los elementos */
+    padding: 0;
+    /* Elimina el padding predeterminado de todos los elementos */
 }
 
-h1{
+h1 {
     color: var(--heading-color);
     font-size: 54px;
     font-weight: 600;
     line-height: 62px;
 
-    & span{
+    & span {
         color: var(--primary-color);
     }
 }
 
 h2 {
     color: var(--heading-color);
-    font-size: 42px; /* Define el tamaño de la fuente del texto a 42 píxeles */
+    font-size: 42px;
+    /* Define el tamaño de la fuente del texto a 42 píxeles */
     font-weight: 600;
-    line-height: 50px; /* Define el espacio vertical entre líneas de texto, estableciendo una altura de 50 píxeles entre cada línea */
+    line-height: 50px;
+    /* Define el espacio vertical entre líneas de texto, estableciendo una altura de 50 píxeles entre cada línea */
 }
 
 h3 {
-    color: var(--heading-color); /* Establece el color del texto del elemento a la variable --heading-color */
-    font-size: 23px; /* Define el tamaño de la fuente del texto a 23 píxeles */
+    color: var(--heading-color);
+    /* Establece el color del texto del elemento a la variable --heading-color */
+    font-size: 23px;
+    /* Define el tamaño de la fuente del texto a 23 píxeles */
     font-weight: 600;
-    line-height: 32px; /* Define el espacio vertical entre líneas de texto, estableciendo una altura de 32 píxeles entre cada línea */
+    line-height: 32px;
+    /* Define el espacio vertical entre líneas de texto, estableciendo una altura de 32 píxeles entre cada línea */
 }
 
-main{
+img {
+    max-width: 100%;
+}
+
+main {
     /* max-width: 1180px; Define el ancho máximo del elemento main a 1180 píxeles, lo que significa que no podrá crecer más allá de este tamaño aunque haya espacio disponible */
     /* margin: 0 auto; */
 }
 
-nav{
-    padding: 20px 0; /* Añade un espacio interno al elemento con 20 píxeles de padding superior e inferior y 0 píxeles de padding izquierdo y derecho */
+nav {
+    padding: 20px 0;
+    /* Añade un espacio interno al elemento con 20 píxeles de padding superior e inferior y 0 píxeles de padding izquierdo y derecho */
 }
 
-.nav-container{
-    display: flex; /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
-    justify-content: space-between; /* Distribuye los elementos flexibles de manera que haya un espacio igual entre ellos, con el primer elemento al inicio y el último al final */
+.nav-container {
+    display: flex;
+    /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
+    justify-content: space-between;
+    /* Distribuye los elementos flexibles de manera que haya un espacio igual entre ellos, con el primer elemento al inicio y el último al final */
+
+    & ul{
+        display: none;
+        position: absolute;
+        background-color: var(--primary-color);
+        top: 0;
+        left: 0;
+        height: 100vh;
+        /* display: flex; */
+        flex-direction: column;
+        padding: 20px 0;
+        text-align: center;
+        width: 100%;
+        
+        & a{
+            color: var(--white);
+        }
+    }
 }
+
 p {
-    color: var(--paragraph-color); /* Establece el color del texto del elemento a la variable --paragraph-color */
-    font-size: 17px; /* Define el tamaño de la fuente del texto a 17 píxeles */
-    line-height: 29px; /* Define el espacio vertical entre líneas de texto, estableciendo una altura de 29 píxeles entre cada línea */
+    color: var(--paragraph-color);
+    /* Establece el color del texto del elemento a la variable --paragraph-color */
+    font-size: 17px;
+    /* Define el tamaño de la fuente del texto a 17 píxeles */
+    line-height: 29px;
+    /* Define el espacio vertical entre líneas de texto, estableciendo una altura de 29 píxeles entre cada línea */
 }
 
-summary{
-    background-color:var(--white);
+summary {
+    background-color: var(--white);
     font-size: 18px;
-    font-weight: 600; /* Define el grosor o peso de la fuente, donde 600 representa un peso semi-negrita, haciendo que el texto sea más grueso que el normal (400) pero menos que negrita completa (700) */
-    &::marker{
+    font-weight: 600;
+
+    /* Define el grosor o peso de la fuente, donde 600 representa un peso semi-negrita, haciendo que el texto sea más grueso que el normal (400) pero menos que negrita completa (700) */
+    &::marker {
         color: var(--primary-color);
     }
 }
 
-ul{
-    list-style: none; /* Elimina los marcadores o viñetas que aparecen por defecto en las listas, dejándolas sin ningún estilo de marcador */
-    display: flex; /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
-    gap: 30px; /* Establece un espacio entre los elementos flexibles dentro del contenedor flexible */
+ul {
+    list-style: none;
+    /* Elimina los marcadores o viñetas que aparecen por defecto en las listas, dejándolas sin ningún estilo de marcador */
+    display: flex;
+    /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
+    gap: 30px;
+    /* Establece un espacio entre los elementos flexibles dentro del contenedor flexible */
 
-    & li a{
+    & li a {
         color: var(--heading-color);
-        font-weight: 600; /* Define el grosor o peso de la fuente, donde 600 representa un peso semi-negrita, haciendo que el texto sea más grueso que el normal (400) pero menos que negrita completa (700) */
-        text-decoration: none; /* Elimina el subrayado que se muestra por defecto en los enlaces */
+        font-weight: 600;
+        /* Define el grosor o peso de la fuente, donde 600 representa un peso semi-negrita, haciendo que el texto sea más grueso que el normal (400) pero menos que negrita completa (700) */
+        text-decoration: none;
+        /* Elimina el subrayado que se muestra por defecto en los enlaces */
     }
 }
 
 .btn-primary {
-    background-color: var(--primary-color); /* Establece el color de fondo del botón a la variable --primary-color */
-    border-radius: 25px; /* Redondea las esquinas del botón con un radio de 10 píxeles */
-    box-shadow: 1px 0.1rem 0.5rem 0px rgb(60 60 60/12%); /* Añade una sombra al botón con un color gris oscuro y una opacidad del 39% */
-    color: var(--white); /* Establece el color del texto del botón a la variable --white */
-    display: block; /* Convierte el botón en un bloque, lo que significa que ocupará todo el ancho disponible */
-    height: fit-content; /* Ajusta la altura del elemento automáticamente al tamaño de su contenido, sin agregar espacio adicional */
-    padding: 16px; /* Añade un espacio interno al botón con 8 píxeles de padding superior e inferior y 10 píxeles de padding izquierdo y derecho */
-    width: fit-content; /* Establece el ancho del botón a un ancho que se ajuste al contenido interno */
-    text-decoration: none; /* Elimina el subrayado que se muestra por defecto en los enlaces */
+    background-color: var(--primary-color);
+    /* Establece el color de fondo del botón a la variable --primary-color */
+    border-radius: 25px;
+    /* Redondea las esquinas del botón con un radio de 10 píxeles */
+    box-shadow: 1px 0.1rem 0.5rem 0px rgb(60 60 60/12%);
+    /* Añade una sombra al botón con un color gris oscuro y una opacidad del 39% */
+    color: var(--white);
+    /* Establece el color del texto del botón a la variable --white */
+    display: block;
+    /* Convierte el botón en un bloque, lo que significa que ocupará todo el ancho disponible */
+    height: fit-content;
+    /* Ajusta la altura del elemento automáticamente al tamaño de su contenido, sin agregar espacio adicional */
+    padding: 16px;
+    /* Añade un espacio interno al botón con 8 píxeles de padding superior e inferior y 10 píxeles de padding izquierdo y derecho */
+    width: fit-content;
+    /* Establece el ancho del botón a un ancho que se ajuste al contenido interno */
+    text-decoration: none;
+    /* Elimina el subrayado que se muestra por defecto en los enlaces */
 }
 
-.container{
-    max-width: 1180px; /* Define el ancho máximo del elemento main a 1180 píxeles, lo que significa que no podrá crecer más allá de este tamaño aunque haya espacio disponible */
-    margin: 0 auto; /* Centra horizontalmente el elemento estableciendo un margen automático igual en los lados izquierdo y derecho, mientras mantiene 0 margen en la parte superior e inferior */
+.container {
+    max-width: 1180px;
+    /* Define el ancho máximo del elemento main a 1180 píxeles, lo que significa que no podrá crecer más allá de este tamaño aunque haya espacio disponible */
+    margin: 0 auto;
+    /* Centra horizontalmente el elemento estableciendo un margen automático igual en los lados izquierdo y derecho, mientras mantiene 0 margen en la parte superior e inferior */
+    padding: 0 15px;
+    /* Añade un espacio interno al elemento con 0 píxeles de padding superior e inferior y 15 píxeles de padding izquierdo y derecho */
 }
 
 /* faq styles */
-.faqs{
+.faqs {
     background-color: var(--gray);
     padding: 50px 0 100px;
 
-    & h2, & p{
+    & h2,
+    & p {
         margin-bottom: 20px;
     }
 }
 
-.faqs-container{
+.faqs-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 80px;
 }
 
-.faqs-item{
+.faqs-item {
     cursor: pointer;
-    box-shadow: 1px 0.1rem 0.5rem 0px rgb(60 60 60/12%); /* Añade una sombra al botón con un color gris oscuro y una opacidad del 39% */
+    box-shadow: 1px 0.1rem 0.5rem 0px rgb(60 60 60/12%);
+    /* Añade una sombra al botón con un color gris oscuro y una opacidad del 39% */
 }
 
-.faqs-list{
+.faqs-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.footer-container{
+.footer-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
 
-    & .btn-primary{
+    & .btn-primary {
         justify-self: center;
     }
 }
+
 /*   hero-styles */
-.hero{
+.hero {
     display: flex;
     align-items: center;
     gap: 30px;
     padding: 60px 0;
 
-    & h1{
+    & h1 {
         max-width: 405px;
     }
 
-    & p{
+    & p {
         font-size: 22px;
         line-height: 34px;
         margin-bottom: 30px;
     }
 }
 
-.hero-container{
+.hero-container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 30px;
 }
 
 /* projects styles */
-.projects{
+.projects {
     padding: 50px 0 100px;
-    & h2{
+
+    & h2 {
         margin: 0 auto 50px;
         max-width: 780px;
         text-align: center;
     }
 
 }
-.projects-container{
-    display: grid; /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
-    grid-template-columns: repeat(2, 1fr); /* Crea una cuadrícula con 3 columnas de igual ancho */
-    gap: 20px; /* Establece un espacio de 20 píxeles entre los elementos de la cuadrícula, tanto en filas como en columnas */
+
+.projects-container {
+    display: grid;
+    /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
+    grid-template-columns: repeat(1, 1fr);
+    /* Crea una cuadrícula con 3 columnas de igual ancho */
+    gap: 30px;
+    /* Establece un espacio de 20 píxeles entre los elementos de la cuadrícula, tanto en filas como en columnas */
 }
 
 /* service-styles */
-.services{
-    background-color: var(--light-gray); /* Establece el color de fondo del elemento a la variable --light-gray */
-    padding: 50px 0; /* Añade un espacio interno al elemento con 50 píxeles de padding superior e inferior y 0 píxeles de padding izquierdo y derecho */
-    & h2{
-        max-width: 655px; /* Establece el ancho máximo del elemento h2 a 655 píxeles */
-        margin: 0 auto 70px; /* Centra el elemento horizontalmente y establece un margen inferior de 70 píxeles */
-        text-align: center; /* Centra el texto del elemento horizontalmente */
+.services {
+    background-color: var(--light-gray);
+    /* Establece el color de fondo del elemento a la variable --light-gray */
+    padding: 50px 0;
+
+    /* Añade un espacio interno al elemento con 50 píxeles de padding superior e inferior y 0 píxeles de padding izquierdo y derecho */
+    & h2 {
+        max-width: 655px;
+        /* Establece el ancho máximo del elemento h2 a 655 píxeles */
+        margin: 0 auto 70px;
+        /* Centra el elemento horizontalmente y establece un margen inferior de 70 píxeles */
+        text-align: center;
+        /* Centra el texto del elemento horizontalmente */
     }
 }
 
 .services-list {
-    display: grid; /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
-    grid-template-columns: repeat(3, 1fr); /* Crea una cuadrícula con 3 columnas de igual ancho */
+    display: grid;
+    /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
+    grid-template-columns: repeat(1, 1fr);
+    gap: 50px;
 }
 
 
 .service-item {
-    text-align: center; /* Centra el texto del elemento horizontalmente */
+    text-align: center;
+    /* Centra el texto del elemento horizontalmente */
 
     &p {
-        margin-bottom: 15px; /* Establece un margen inferior de 15 píxeles para el elemento p */
+        margin-bottom: 15px;
+        /* Establece un margen inferior de 15 píxeles para el elemento p */
     }
 
     & a {
-        color: var(--primary-color); /* Establece el color del texto del enlace a la variable --primary-color */
-        text-decoration: none; /* Elimina el subrayado que se muestra por defecto en los enlaces */
+        color: var(--primary-color);
+        /* Establece el color del texto del enlace a la variable --primary-color */
+        text-decoration: none;
+        /* Elimina el subrayado que se muestra por defecto en los enlaces */
     }
-    & img{
-        min-height: 230px; /* Establece la altura mínima del elemento img a 230 píxeles */
+
+    & img {
+        min-height: 230px;
+        /* Establece la altura mínima del elemento img a 230 píxeles */
     }
-    & p{
-        margin: 0 auto 20px; /* Centra el elemento horizontalmente y establece un margen inferior de 20 píxeles */
-        max-width: 316px; /* Establece el ancho máximo del elemento p a 316 píxeles */
+
+    & p {
+        margin: 0 auto 20px;
+        /* Centra el elemento horizontalmente y establece un margen inferior de 20 píxeles */
+        max-width: 316px;
+        /* Establece el ancho máximo del elemento p a 316 píxeles */
     }
 }
 
 /* strategy-styles */
-.strategy{
+.strategy {
     background-color: var(--gray);
-    padding: 50px 0 100px; /* Añade un espacio interno al elemento con 50 píxeles de padding superior e inferior y 0 píxeles de padding izquierdo y derecho */
+    padding: 50px 0 100px;
+    /* Añade un espacio interno al elemento con 50 píxeles de padding superior e inferior y 0 píxeles de padding izquierdo y derecho */
 
-    & h2{
+    & h2 {
         margin-bottom: 30px;
     }
-    & p{
+
+    & p {
         margin-bottom: 20px;
     }
 }
-.strategy-container{
+
+.strategy-container {
     align-items: center;
     display: grid;
     gap: 40px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
 }
 
-.strategy-cards-container{
-    display: flex; /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
-    flex-direction: column; /* Establece la dirección del flujo de los elementos flexibles en columna vertical, uno debajo del otro */
+.strategy-cards-container {
+    display: flex;
+    /* Convierte el elemento en un contenedor flexible, permitiendo organizar sus elementos hijos en una fila o columna y controlar su distribución y alineación */
+    flex-direction: column;
+    /* Establece la dirección del flujo de los elementos flexibles en columna vertical, uno debajo del otro */
     gap: 40px;
 }
 
-.strategy-card{
-    align-items: center; /* Centra verticalmente los elementos hijos dentro del contenedor flex */
+.strategy-card {
+    align-items: center;
+    /* Centra verticalmente los elementos hijos dentro del contenedor flex */
     background-color: var(--white);
     box-shadow: 1px 0.1rem 0.5rem 0px rgb(60 60 60/12%);
     display: flex;
     gap: 20px;
     max-width: 520px;
     padding: 20px;
-    position: relative; /* Permite posicionar el elemento de forma relativa a su posición normal en el flujo del documento, sin afectar a otros elementos. Es necesario para que funcione el desplazamiento 'left: 50px' del segundo elemento */
+    position: relative;
+    /* Permite posicionar el elemento de forma relativa a su posición normal en el flujo del documento, sin afectar a otros elementos. Es necesario para que funcione el desplazamiento 'left: 50px' del segundo elemento */
 
-    &:nth-child(2){ /* Selecciona el segundo elemento hijo dentro del contenedor padre y le aplica un desplazamiento de 50px hacia la derecha */
-        left: 50px;
-    }
 
-    &:nth-child(3){ /* Selecciona el tercer elemento hijo dentro del contenedor padre y le aplica un desplazamiento de 50px hacia la derecha */
-        left: 20px;
-    }
-
-    & .order{
+    & .order {
         background-color: var(--skyblue);
         border-radius: 100%;
         color: var(--primary-color);
         font-size: 22px;
         font-weight: 600;
         padding: 10px 12px;
-        width: fit-content; /* Ajusta el ancho del elemento al contenido, haciendo que el elemento sea tan ancho como su contenido y no más */
+        width: fit-content;
+        /* Ajusta el ancho del elemento al contenido, haciendo que el elemento sea tan ancho como su contenido y no más */
     }
 }
 
 /* Team styles */
-.team{
+.team {
     background-color: var(--gray);
     padding: 50px 0 100px;
 }
 
-.team-container{
+.team-container {
     display: grid;
-    grid-template-columns: 1fr 2fr auto;
+    grid-template-columns: repeat(1, 1fr);
 }
 
-.team-item{
+.team-item {
     background-color: var(--white);
     box-shadow: 1px 0.1rem 0.5rem 0px rgb(60 60 60/12%);
     padding: 20px;
 
-    & h3{
+    & h3 {
         font-size: 20px;
 
-        & + p {
+        &+p {
             color: #AAB0BC;
             text-transform: uppercase;
         }
     }
-    
+
 }
 
-.team-list{
+.team-list {
     display: grid;
     gap: 20px;
     grid-column: 1 / -1;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
 }
 
-.team-statistics{
+.team-statistics {
     display: flex;
+    flex-wrap: wrap;
     gap: 100px;
 }
 
-.team-statistics-item{
+.team-statistics-item {
     display: flex;
+    flex: 1;
     text-align: center;
     align-items: center;
-    gap: 10px;
     flex-direction: column;
-    & h3{
+
+    & h3 {
         font-size: 41px;
     }
-    & .image{
+
+    & .image {
         background-color: var(--skyblue);
         border-radius: 100%;
         justify-content: center;
-        width: fit-content; /* Ajusta el ancho del elemento para que se ajuste exactamente al contenido, sin ser más ancho ni más estrecho que el contenido mismo */
+        width: fit-content;
+        /* Ajusta el ancho del elemento para que se ajuste exactamente al contenido, sin ser más ancho ni más estrecho que el contenido mismo */
         padding: 16px;
     }
 }
+
 /*   testimonials-styles */
-.testimonials{
+.testimonials {
     background-color: var(--light-gray);
     padding: 70px 0;
-    & h2{
+
+    & h2 {
         max-width: 670px;
         margin: 0 auto 50px;
         text-align: center;
     }
 }
 
-.testimonials-list{
+.testimonials-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px; /* Establece un espacio de 20 píxeles entre los elementos de la cuadrícula, tanto en filas como en columnas */
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    /* Establece un espacio de 20 píxeles entre los elementos de la cuadrícula, tanto en filas como en columnas */
 }
-.testimonial-item{
+
+.testimonial-item {
     background-color: var(--white);
     padding: 20px;
-    & p{
+
+    & p {
         font-size: 18px;
     }
 }
 
-.testimonial-author{
+.testimonial-author {
     display: flex;
     /* Alinea los elementos al inicio (izquierda) del contenedor flex */
     justify-content: flex-start;
     gap: 30px;
     margin-top: 30px;
 
-    & img{
+    & img {
         max-width: 70px;
+    }
+}
+
+@media (min-width:786px) {
+    .faqs-container {
+        gap: 30px;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-container {
+        flex-wrap: nowrap;
+
+        & h1{
+            font-size: 40px;
+        }
+
+        & p{
+            font-size: 18px;
+        }
+    }
+
+    /* .nav-container {
+        & ul{
+            display: flex;
+        }
+    } */
+
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* Crea una cuadrícula con 3 columnas de igual ancho */
+    }
+
+    .strategy-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-list {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .team-statistics-item {
+        gap: 10px;
+    }
+
+    .testimonials-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width:1024px) {
+    .faqs-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 80px;
+    }
+
+    .services-list {
+        grid-template-columns: repeat(3, 1fr);
+        /* Crea una cuadrícula con 3 columnas de igual ancho */
+    }
+
+    .team-container {
+        grid-template-columns: 1fr 2fr auto;
+    }
+
+    .team-list {
+        grid-template-columns: repeat(4, 1fr)
+    }
+}
+
+@media (min-width:1280px) {
+    .strategy-card {
+
+        &:nth-child(2) {
+            /* Selecciona el segundo elemento hijo dentro del contenedor padre y le aplica un desplazamiento de 50px hacia la derecha */
+            left: 50px;
+        }
+
+        &:nth-child(3) {
+            /* Selecciona el tercer elemento hijo dentro del contenedor padre y le aplica un desplazamiento de 50px hacia la derecha */
+            left: 20px;
+        }
     }
 }
