@@ -90,21 +90,32 @@ nav {
     justify-content: space-between;
     /* Distribuye los elementos flexibles de manera que haya un espacio igual entre ellos, con el primer elemento al inicio y el último al final */
 
-    & ul{
+    & ul {
         display: none;
-        position: absolute;
-        background-color: var(--primary-color);
-        top: 0;
-        left: 0;
-        height: 100vh;
-        /* display: flex; */
-        flex-direction: column;
-        padding: 20px 0;
-        text-align: center;
-        width: 100%;
-        
-        & a{
+
+
+        &.active {
+            display: flex;
+            position: absolute;
+            background-color: var(--primary-color);
+            top: 0;
+            left: 0;
+            height: 100vh;
+            flex-direction: column;
+            padding: 50px 0 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        & a {
             color: var(--white);
+        }
+
+        & span{
+            font-weight: 600;
+            position: absolute;
+            right: 10px;
+            top: 20px;
         }
     }
 }
@@ -482,20 +493,28 @@ ul {
     .hero-container {
         flex-wrap: nowrap;
 
-        & h1{
+        & h1 {
             font-size: 40px;
         }
 
-        & p{
+        & p {
             font-size: 18px;
         }
     }
 
-    /* .nav-container {
-        & ul{
-            display: flex;
+    .btn-nav{
+        display: none;
+    }
+
+    .nav-container {
+            & ul{
+                display: flex;
+
+                & a{
+                    color: var(--paragraph-color);
+                }
+            }
         }
-    } */
 
     .projects-container {
         grid-template-columns: repeat(2, 1fr);
