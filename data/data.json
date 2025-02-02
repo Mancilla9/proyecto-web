@@ -102,7 +102,7 @@
             "category":"Category"
         },
         {
-            "id":0,
+            "id":1,
             "image":"./images/projects/project2.jpg",
             "title":"nombre del proyecto",
             "category":"Category"
