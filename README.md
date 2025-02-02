@@ -1,7 +1,7 @@
 # DataFlow Manager
 
 ## Descripción
-Este proyecto es una aplicación web que permite gestionar y visualizar datos desde un archivo JSON. Proporciona una interfaz para interactuar con la información almacenada y realizar operaciones básicas de CRUD (Crear, Leer, Actualizar, Eliminar).
+Este proyecto es una aplicación web que permite gestionar y visualizar datos desde un archivo JSON. Proporciona una interfaz para interactuar con la información almacenada
 
 La aplicación está diseñada para:
 - Mostrar datos en tiempo real
